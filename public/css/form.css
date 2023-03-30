@@ -12,7 +12,8 @@ body {
   background: white;
 }
 .wrapper {
-  padding: 500px 30px 30px;
+  padding-top: 100px;
+  align-items: center;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -23,10 +24,6 @@ body {
   width: 70%;
   min-width: 420px;
   padding: 30px 30px;
-  transform: translate(-50%, -50%);
-  position: relative;
-  left: 50%;
-  top: 50%;
   border-radius: 10px;
   box-shadow: 20px 30px 25px rgba(0, 0, 0, 0.15);
 }
