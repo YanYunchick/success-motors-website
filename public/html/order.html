@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://code.jquery.com/jquery-3.6.4.js"
+      integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E="
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="../css/nav.css" />
+    <link rel="stylesheet" href="../css/form.css" />
+    <script
+      src="https://kit.fontawesome.com/7c40222415.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!--Navigation bar-->
+    <div id="nav-placeholder"></div>
+
+    <script>
+      $(function () {
+        $("#nav-placeholder").load("nav.html");
+      });
+    </script>
+    <!--end of Navigation bar-->
+    <!--  ----------------------------------------------------------------------  -->
+    <!--  NOTE: Please add the following <META> element to your page <HEAD>.      -->
+    <!--  If necessary, please modify the charset parameter to specify the        -->
+    <!--  character set of your HTML page.                                        -->
+    <!--  ----------------------------------------------------------------------  -->
+
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script>
+      function timestamp() {
+        var response = document.getElementById("g-recaptcha-response");
+        if (response == null || response.value.trim() == "") {
+          var elems = JSON.parse(
+            document.getElementsByName("captcha_settings")[0].value
+          );
+          elems["ts"] = JSON.stringify(new Date().getTime());
+          document.getElementsByName("captcha_settings")[0].value =
+            JSON.stringify(elems);
+        }
+      }
+      setInterval(timestamp, 500);
+    </script>
+
+    <!--  ----------------------------------------------------------------------  -->
+    <!--  NOTE: Please add the following <FORM> element to your page.             -->
+    <!--  ----------------------------------------------------------------------  -->
+    <div class="wrapper">
+      <div class="container">
+        <h1>MAKE AN ORDER</h1>
+        <p>Do you want to order something?</p>
+        <p>Fill the Form</p>
+        <form
+          action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8"
+          method="POST"
+        >
+          <input
+            type="hidden"
+            name="captcha_settings"
+            value='{"keyname":"SuccessMotorsKeyV2","fallback":"true","orgId":"00D2w00000RpwHo","ts":""}'
+          />
+          <input type="hidden" name="oid" value="00D2w00000RpwHo" />
+          <input
+            type="hidden"
+            name="retURL"
+            value="https://successmotors-7859e.web.app"
+          />
+
+          <!--  ----------------------------------------------------------------------  -->
+          <!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
+          <!--  these lines if you wish to test in debug mode.                          -->
+          <!--  <input type="hidden" name="debug" value=1>                              -->
+          <!--  <input type="hidden" name="debugEmail"                                  -->
+          <!--  value="yan.yunchick@gmail.com">                                         -->
+          <!--  ----------------------------------------------------------------------  -->
+          <div class="row">
+            <div class="column">
+              <label for="company">Company</label
+              ><input
+                id="company"
+                maxlength="40"
+                name="company"
+                size="20"
+                type="text"
+              /><br />
+            </div>
+            <div class="column">
+              <label for="email">Email</label
+              ><input
+                id="email"
+                maxlength="80"
+                name="email"
+                size="20"
+                type="text"
+              /><br />
+            </div>
+          </div>
+          <div class="row">
+            <div class="column">
+              <label for="first_name">First Name</label
+              ><input
+                id="first_name"
+                maxlength="40"
+                name="first_name"
+                size="20"
+                type="text"
+              /><br />
+            </div>
+            <div class="column">
+              <label for="last_name">Last Name</label
+              ><input
+                id="last_name"
+                maxlength="80"
+                name="last_name"
+                size="20"
+                type="text"
+              /><br />
+            </div>
+          </div>
+          <div class="row">
+            <div class="column">
+              <label for="phone">Phone</label
+              ><input
+                id="phone"
+                maxlength="40"
+                name="phone"
+                size="20"
+                type="text"
+              /><br />
+            </div>
+            <div class="column">
+              Product:<select
+                id="00N2w00000Z3uTS"
+                name="00N2w00000Z3uTS"
+                title="Product"
+              >
+                <option value="">--None--</option>
+                <option value="R001C1">Renault Logan</option>
+                <option value="R002C2">Renault Logan Stepway</option>
+                <option value="R003C3">Renault Sandero</option>
+                <option value="R004C4">Renault Sandero Stepway</option>
+                <option value="R005E1">K7M</option>
+                <option value="R006E2">K4M</option>
+                <option value="R007E3">H4M</option>
+                <option value="HK001C1">Kia Rio</option>
+                <option value="HK002C2">Kia Rio X-Line</option>
+                <option value="HK003C3">Hyundai Accent</option>
+                <option value="HK004C4">Hyundai Solaris</option>
+                <option value="HK005E1">G4LC</option>
+                <option value="HK006E2">G4FG</option>
+                <option value="VAG001C1">Volkswagen Polo Sedan</option>
+                <option value="VAG002C2">Volkswagen Polo 2021</option>
+                <option value="VAG003C3">Skoda Rapid</option>
+                <option value="VAG004E1">CZCA</option>
+                <option value="VAG005E2">CFW</option>
+                <option value="VAG006E3">CWVA</option>
+                <option value="VAG007E4">CFNA</option>
+                <option value="VAG008E5">CFNB</option>
+                <option value="L001C1">Lada Vesta</option>
+                <option value="L002C2">Lada Xray</option>
+                <option value="L003E1">VAZ-21179</option>
+                <option value="L004E2">VAZ-21129</option>
+                <option value="R008A1">Carpets Renault</option>
+                <option value="HK007A1">Carpets Hyundai</option>
+                <option value="HK008A2">Carpets Kia</option>
+                <option value="VAG009A1">Carpets Volkswagen</option>
+                <option value="VAG010A2">Carpets Skoda</option>
+                <option value="L005A1">Carpets Lada</option>
+                <option value="MI001A1">Phone holder Xiaomi</option></select
+              ><br />
+            </div>
+          </div>
+          <div class="row">
+            <div
+              class="g-recaptcha"
+              data-sitekey="6Le-CzwlAAAAAOKD6tLw97XGjzps4iHjP0aZ5BKz"
+            ></div>
+            <br />
+          </div>
+          <input class="submit" type="submit" name="submit" />
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
